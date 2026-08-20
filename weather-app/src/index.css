@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply font-body bg-cloud text-ink;
+  margin: 0;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html.dark body {
+  @apply bg-night text-cloud;
+}
+
+h1,
+h2,
+h3,
+.display {
+  @apply font-display;
+}
+
+.mono {
+  @apply font-mono tracking-tight;
+}
+
+/* Custom cursor hides native cursor on precision pointers only */
+@media (pointer: fine) {
+  body.cursor-enabled,
+  body.cursor-enabled * {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  background: #3EC9A7;
+  color: #0B1026;
+}
+
+/* Dark mode glass */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Light mode glass */
+html.light .glass,
+html:not(.dark) .glass {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(11, 16, 38, 0.12);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid #3EC9A7;
+  outline-offset: 2px;
+}
