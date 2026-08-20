@@ -6,7 +6,7 @@ A modern, feature-rich weather application built with **React**, **Vite**, and *
 
 Real-time weather • 24-hour & 10-day forecasts • Air Quality • PWA • Responsive UI • Animated Weather Backgrounds
 
-**🌐 Live Demo:** https://your-vercel-url.vercel.app
+**🌐 Live Demo:** https://skylineweatherpk.vercel.app/
 
 </div>
 
