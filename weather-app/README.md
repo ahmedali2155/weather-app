@@ -1,68 +1,235 @@
-# Skyline — Weather
+# 🌤️ Skyline Weather
 
-A fast, professional weather app built with React, Vite, and Tailwind CSS. Live conditions, hourly and 10-day forecasts, air quality, and weather-matched animated backgrounds — powered entirely by free, key-free APIs.
+<div align="center">
 
-## Setup
+A modern, feature-rich weather application built with **React**, **Vite**, and **Tailwind CSS** during my internship at **SMC Tech**.
+
+Real-time weather • 24-hour & 10-day forecasts • Air Quality • PWA • Responsive UI • Animated Weather Backgrounds
+
+**🌐 Live Demo:** https://your-vercel-url.vercel.app
+
+</div>
+
+---
+
+## 📖 About
+
+Skyline Weather is a modern weather application that delivers real-time weather information with a clean, responsive interface and smooth user experience.
+
+Unlike traditional weather apps, Skyline combines rich weather data with dynamic animations, interactive charts, offline support, customizable themes, and intelligent caching to create a fast and engaging experience across desktop and mobile devices.
+
+This project was developed as part of my internship at **SMC Tech**, allowing me to apply modern frontend development practices while working with real-world APIs.
+
+---
+
+## ✨ Key Features
+
+### 🌍 Weather Information
+
+- Current weather conditions
+- Feels-like temperature
+- Humidity
+- Wind speed & direction
+- Atmospheric pressure
+- Visibility
+- UV Index
+- Sunrise & Sunset
+- Air Quality Index (AQI)
+
+### 📅 Forecasts
+
+- Hourly weather forecast
+- 10-day forecast
+- Interactive temperature chart
+- Expandable forecast cards
+
+### 🔍 Search & Navigation
+
+- Search cities worldwide
+- Debounced autocomplete
+- Recent searches
+- Favorite locations
+- Compare multiple cities
+
+### 🎨 User Experience
+
+- Light / Dark / System theme
+- Weather-based animated backgrounds
+- Animated cursor effects
+- Skeleton loading states
+- Toast notifications
+- Pull-to-refresh on mobile
+- Responsive design
+- Keyboard accessibility
+
+### ⚡ Performance
+
+- Stale-while-revalidate caching
+- Offline support
+- Progressive Web App (PWA)
+- GPU-optimized animations
+- Optimized rendering
+- LocalStorage persistence
+
+---
+
+# 🛠️ Tech Stack
+
+| Category | Technologies |
+|----------|--------------|
+| Frontend | React, Vite |
+| Styling | Tailwind CSS |
+| Charts | Recharts |
+| State Management | Zustand |
+| APIs | Open-Meteo APIs, BigDataCloud |
+| PWA | Service Worker |
+| Deployment | Vercel |
+| Version Control | Git & GitHub |
+
+---
+
+# 📡 APIs Used
+
+This project uses free APIs that require **no API keys**.
+
+| API | Purpose |
+|-----|----------|
+| Open-Meteo | Current weather, hourly & daily forecasts |
+| Open-Meteo Geocoding | City search & autocomplete |
+| Open-Meteo Air Quality | AQI & pollutant data |
+| BigDataCloud | Reverse geocoding |
+| Browser Geolocation API | Current location detection |
+
+---
+
+# 🚀 Getting Started
+
+Clone the repository
+
+```bash
+git clone https://github.com/ahmedali2155/weather-app.git
+```
+
+Navigate into the project
+
+```bash
+cd weather-app
+```
+
+Install dependencies
 
 ```bash
 npm install
+```
+
+Start the development server
+
+```bash
 npm run dev
 ```
 
-Then open the printed local URL (usually `http://localhost:5173`).
+Build for production
 
 ```bash
-npm run build      # production build to dist/
-npm run preview    # preview the production build
+npm run build
 ```
 
-## Data sources (no API keys required)
+Preview production build
 
-- **[Open-Meteo](https://open-meteo.com)** — current conditions, hourly and daily forecast, UV index
-- **[Open-Meteo Geocoding](https://open-meteo.com/en/docs/geocoding-api)** — city name search/autocomplete
-- **[Open-Meteo Air Quality](https://open-meteo.com/en/docs/air-quality-api)** — AQI and pollutant breakdown
-- **[BigDataCloud reverse geocoding](https://www.bigdatacloud.com/free-api/free-reverse-geocode-to-city-api)** — turns your coordinates into a city name
-- Browser **Geolocation API** — "Use my current location"
+```bash
+npm run preview
+```
 
-## Features
+---
 
-- Current conditions, feels-like, humidity, wind, pressure, visibility, UV, sunrise/sunset, air quality
-- Scrollable 24-hour forecast + interactive temperature chart (Recharts)
-- Expandable 10-day forecast
-- Animated wind compass and sunrise/sunset arc visualizations
-- City search with debounced autocomplete, recent searches, favorites, and multi-city comparison
-- Light / dark / system theme, with °C/°F, km/h/mph, hPa/inHg unit toggles — all persisted to `localStorage`
-- Weather-matched animated backgrounds (clear day/night, clouds, rain, snow, thunderstorm, fog), built from layered CSS/SVG — no video or image assets, GPU-friendly transforms, capped particle counts, and paused when the browser tab is inactive
-- Custom spring-physics cursor with a weather-tinted trailing glow — automatically disabled on touch devices, and toggleable in Settings
-- Skeleton loading states, animated number counters, toast notifications, pull-to-refresh on mobile
-- Stale-while-revalidate caching: the last successful forecast is shown instantly from `localStorage` while fresh data loads in the background, so the app is useful even when offline
-- Installable as a PWA with an offline fallback page
-- Responsive from 375px to 1440px+, keyboard-navigable, and respects `prefers-reduced-motion`
-
-## Folder structure
+# 📁 Project Structure
 
 ```
 src/
-├── api/            Open-Meteo + geocoding + air quality clients
+│
+├── api/
 ├── components/
-│   ├── background/  Per-condition animated scenes (Rain, Snow, Storm, Fog, Clouds, Clear, NightSky)
-│   ├── cursor/       Custom animated cursor
-│   ├── common/       Skeleton, Toast, ErrorState, EmptyState, AnimatedNumber
-│   ├── layout/        Navbar, Footer, PageWrapper
-│   ├── search/        SearchBar, SearchResults, RecentSearches
-│   ├── theme/          ThemeToggle
-│   └── weather/         CurrentWeatherCard, HourlyForecast, DailyForecast, TempChart, WindCompass, SunArc, AQIPanel, UnitToggle
-├── hooks/           useGeolocation, useWeather, useDebounce, useLocalStorage, useOnlineStatus
-├── pages/           Home, Search, Compare, Favorites, Settings, NotFound
-├── store/           Zustand global store (theme, units, cities, favorites, toasts)
-├── utils/           weatherCodeMap.js, unitConversions.js, dateTime.js
+│   ├── background/
+│   ├── common/
+│   ├── cursor/
+│   ├── layout/
+│   ├── search/
+│   ├── theme/
+│   └── weather/
+│
+├── hooks/
+├── pages/
+├── store/
+├── utils/
+│
 ├── App.jsx
 ├── router.jsx
 └── main.jsx
 ```
 
-## Notes
+---
 
-- All weather-code-to-icon/label/background logic lives in one place: `src/utils/weatherCodeMap.js`.
-- The custom cursor uses `pointer-events: none` and only activates on `(pointer: fine)` devices, so it never blocks clicks and never appears on phones or tablets.
-- Background animations use only `transform`/`opacity`, cap particle counts at ~50–60, and pause via the Page Visibility API when the tab isn't active.
+# 📱 Responsive Design
+
+Skyline Weather is optimized for:
+
+- 📱 Mobile
+- 📲 Tablet
+- 💻 Laptop
+- 🖥️ Desktop
+
+---
+
+# ♿ Accessibility
+
+- Keyboard navigation
+- Reduced motion support
+- Touch device optimization
+- Responsive layouts
+- Accessible color themes
+
+---
+
+# 🎯 Learning Outcomes
+
+During this internship project, I strengthened my skills in:
+
+- React Architecture
+- Custom Hooks
+- State Management with Zustand
+- API Integration
+- Performance Optimization
+- Progressive Web Apps
+- Responsive Design
+- Git & GitHub Workflow
+- Modern Frontend Development
+
+---
+
+# 🚀 Future Improvements
+
+- Weather alerts
+- Radar maps
+- Multiple language support
+- User accounts & cloud sync
+- Historical weather data
+
+---
+
+# 👨‍💻 Author
+
+**Ahmed Ali**
+
+GitHub: https://github.com/ahmedali2155
+
+---
+
+# 🏢 Internship
+
+Developed during my **Frontend Development Internship at SMC Tech** as part of hands-on training in modern React application development.
+
+---
+
+# 📄 License
+
+This project is available for educational and portfolio purposes.
